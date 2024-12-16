@@ -26,6 +26,9 @@ for foto in resimler:
 
     sign_detect=haar_cascade.detectMultiScale(fotogray,scaleFactor=1.1,minNeighbors=8)
     for (x,y,w,h) in sign_detect:
+        center_x = x + w // 2
+        center_y = y + h // 2
+        print(f"Stop işaretinin merkezi: X={center_x}, Y={center_y}")
         cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),thickness=2)
 
 
